@@ -1,0 +1,44 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+  <div class="my-3 border-bottom">
+    <div>
+      <h4>회원가입</h4>
+    </div>
+  </div>
+  <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
+    <div th:replace="~{form_errors :: formErrorsFragment}"></div>
+    <div class="mb-3">
+      <label for="username" class="form-label">사용자ID</label>
+      <input type="text" th:field="*{username}" class="form-control">
+      <button style="background-color: lightgray; border: none;">중복확인</button>
+    </div>
+    <div class="mb-3">
+      <label for="password1" class="form-label">비밀번호</label>
+      <input type="password" th:field="*{password1}" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="password2" class="form-label">비밀번호 확인</label>
+      <input type="password" th:field="*{password2}" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">이름</label>
+      <input type="text" th:field="*{name}" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="nickname" class="form-label">닉네임</label>
+      <input type="text" th:field="*{nickname}" class="form-control">
+      <button style="background-color: lightgray; border: none;">중복확인</button>
+    </div>
+    <div class="mb-3">
+      <label for="gender" class="form-label">성별</label>
+      <div>
+        <input type="radio" id="male" name="gender" value="남성" required>
+        <label for="male">남성</label>
+        <input type="radio" id="female" name="gender" value="여성" required>
+        <label for="female">여성</label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">회원가입</button>
+  </form>
+</div>
+</html>

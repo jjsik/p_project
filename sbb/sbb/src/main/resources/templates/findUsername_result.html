@@ -1,0 +1,7 @@
+<h1>아이디 찾기 결과</h1>
+<div th:if="${username}">
+  <p>찾으신 아이디는 <span th:text="${username}"></span> 입니다.</p>
+</div>
+<div th:if="${errorMessage}">
+  <p th:text="${errorMessage}"></p>
+</div>
